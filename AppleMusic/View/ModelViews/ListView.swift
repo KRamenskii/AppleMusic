@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct ListView: View {
-    @State var model: [Section] = SectionModel().createModels()
+    @State private var model: [Section] = SectionModel().createModels()
+    @State private var selectedItem = Set<String>()
     
     var body: some View {
-        List {
+        List(selection: $selectedItem) {
             ForEach(model.indices) { index in
                 HStack {
                     Image(systemName: model[index].icon)
@@ -20,6 +21,7 @@ struct ListView: View {
                     Text(model[index].title)
                 }
             }
+            .onMove(perform: {_,_ in })
         }
         .listStyle(.grouped)
         .onAppear() {

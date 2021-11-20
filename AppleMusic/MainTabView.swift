@@ -9,8 +9,32 @@ import SwiftUI
 
 struct MainTabView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            MediaView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: IconTab.media)
+                        Text(TitleTab.media)
+                    }
+                }
+            
+            RadioView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: IconTab.radio)
+                        Text(TitleTab.radio)
+                    }
+                }
+            
+            SearchView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: IconTab.search)
+                        Text(TitleTab.search)
+                    }
+                }
+        }
+        .accentColor(.pink)
     }
 }
 

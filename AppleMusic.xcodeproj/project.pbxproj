@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		1D008B2F2748D2A800822871 /* AppleMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D008B2E2748D2A800822871 /* AppleMusicApp.swift */; };
-		1D008B312748D2A800822871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D008B302748D2A800822871 /* ContentView.swift */; };
+		1D008B312748D2A800822871 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D008B302748D2A800822871 /* MainTabView.swift */; };
 		1D008B332748D2AA00822871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D008B322748D2AA00822871 /* Assets.xcassets */; };
 		1D008B362748D2AA00822871 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D008B352748D2AA00822871 /* Preview Assets.xcassets */; };
+		1D008B402748D3D200822871 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D008B3F2748D3D200822871 /* Data.swift */; };
+		1D008B422748D3DD00822871 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D008B412748D3DD00822871 /* SectionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D008B2B2748D2A800822871 /* AppleMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D008B2E2748D2A800822871 /* AppleMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicApp.swift; sourceTree = "<group>"; };
-		1D008B302748D2A800822871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1D008B302748D2A800822871 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		1D008B322748D2AA00822871 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D008B352748D2AA00822871 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1D008B3F2748D3D200822871 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		1D008B412748D3DD00822871 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,9 @@
 		1D008B2D2748D2A800822871 /* AppleMusic */ = {
 			isa = PBXGroup;
 			children = (
-				1D008B2E2748D2A800822871 /* AppleMusicApp.swift */,
-				1D008B302748D2A800822871 /* ContentView.swift */,
+				1D008B3D2748D38600822871 /* App */,
+				1D008B3C2748D37F00822871 /* View */,
+				1D008B302748D2A800822871 /* MainTabView.swift */,
 				1D008B322748D2AA00822871 /* Assets.xcassets */,
 				1D008B342748D2AA00822871 /* Preview Content */,
 			);
@@ -65,6 +70,47 @@
 				1D008B352748D2AA00822871 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1D008B3C2748D37F00822871 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D008B3E2748D39300822871 /* Model */,
+				1D008B432748D43800822871 /* ModelViews */,
+				1D008B442748D45500822871 /* Screens */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D008B3D2748D38600822871 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1D008B2E2748D2A800822871 /* AppleMusicApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1D008B3E2748D39300822871 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1D008B3F2748D3D200822871 /* Data.swift */,
+				1D008B412748D3DD00822871 /* SectionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D008B432748D43800822871 /* ModelViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelViews;
+			sourceTree = "<group>";
+		};
+		1D008B442748D45500822871 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +183,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D008B312748D2A800822871 /* ContentView.swift in Sources */,
+				1D008B312748D2A800822871 /* MainTabView.swift in Sources */,
+				1D008B402748D3D200822871 /* Data.swift in Sources */,
 				1D008B2F2748D2A800822871 /* AppleMusicApp.swift in Sources */,
+				1D008B422748D3DD00822871 /* SectionModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

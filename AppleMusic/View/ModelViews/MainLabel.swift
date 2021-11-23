@@ -12,13 +12,14 @@ struct MainLabel: View {
         VStack {
             Text("Ищете свою музыку?")
                 .fontWeight(.bold)
-                .font(.system(size: 30
+                .font(.system(size: 23
                              ))
             Text("Здесь появися купленная Вами в iTunes Store музыка.")
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
-                .font(.system(size: 20))
+                .font(.system(size: 18))
+                .frame(width: 300)
         }
     }
 }

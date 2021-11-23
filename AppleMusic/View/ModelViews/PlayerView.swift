@@ -25,13 +25,13 @@ struct PlayerView: View {
             Button(action: tapPlayButton) {
                 Image(systemName: isTappedPlay ? "pause.fill" : "play.fill")
                     .resizable()
-                    .frame(width: 35, height: 35)
+                    .frame(width: 25, height: 25)
                     .foregroundColor(.black)
             }
             Button(action: tapNextButton) {
                 Image(systemName: "forward.fill")
                     .resizable()
-                    .frame(width: 35, height: 25)
+                    .frame(width: 25, height: 20)
                     .foregroundColor(.black)
                     .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
             }

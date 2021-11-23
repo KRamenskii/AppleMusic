@@ -16,11 +16,10 @@ struct PlayerView: View {
             Image("img_for_player")
                 .resizable(resizingMode: .stretch)
                 .aspectRatio(contentMode: .fit)
-                .cornerRadius(20)
+                .cornerRadius(10)
                 .padding(.init(top: 5, leading: 15, bottom: 5, trailing: 0))
             Text("РИТМ ХЛОП")
-                .font(.title)
-                .fontWeight(.medium)
+                .font(.title3)
             Spacer()
             Button(action: tapPlayButton) {
                 Image(systemName: isTappedPlay ? "pause.fill" : "play.fill")
@@ -36,7 +35,7 @@ struct PlayerView: View {
                     .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
             }
         }
-        .frame(height: 80)
+        .frame(height: 70)
     }
 }
 

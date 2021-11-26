@@ -10,11 +10,7 @@ import SwiftUI
 struct RadioView: View {
     var body: some View {
         NavigationView {
-            VStack {
-                Spacer()
-                MainLabel()
-                Spacer()
-                PlayerView()
+            ZStack {
             }
             .navigationTitle(TitleTab.radio)
         }

@@ -9,32 +9,36 @@ import SwiftUI
 
 struct MainTabView: View {
     var body: some View {
-        TabView {
-            MediaView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: IconTab.media)
-                        Text(TitleTab.media)
+        ZStack {
+            TabView {
+                MediaView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: IconTab.media)
+                            Text(TitleTab.media)
+                        }
                     }
-                }
-            
-            RadioView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: IconTab.radio)
-                        Text(TitleTab.radio)
+
+                RadioView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: IconTab.radio)
+                            Text(TitleTab.radio)
+                        }
                     }
-                }
-            
-            SearchView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: IconTab.search)
-                        Text(TitleTab.search)
+
+                SearchView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: IconTab.search)
+                            Text(TitleTab.search)
+                        }
                     }
-                }
+            }
+            .accentColor(.pink)
+            PlayerView()
+                .padding(.init(top: 0, leading: 0, bottom: 60, trailing: 0))
         }
-        .accentColor(.pink)
     }
 }
 

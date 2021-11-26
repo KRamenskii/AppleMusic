@@ -15,13 +15,8 @@ struct MediaView: View {
             VStack {
                 if isEditing {
                     ListView()
-                    Spacer()
-                    PlayerView()
                 } else {
-                    Spacer()
                     MainLabel()
-                    Spacer()
-                    PlayerView()
                 }
             }
             .navigationTitle(TitleTab.media)

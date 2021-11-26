@@ -46,3 +46,26 @@ enum IconCell {
     static let loaded = "arrow.down.circle"
     static let homeCollection = "music.note.house"
 }
+
+enum NameIconRadioCell {
+    static let hipHopOnRussia = "hip-hop-rus"
+    static let hitsOnRussia = "hit-rus"
+    static let chillaut = "chil"
+    static let hipHop = "hip-hop"
+    static let popMusic = "pop-music"
+    static let danceMusic = "dance-music"
+    static let hits = "hits"
+}
+
+enum NameIconOurPresentersCell {
+    static let upNextRadio = "UpNextRadio"
+    static let theZaneLoweShow = "TheZaneLoveShow"
+    static let rapLifeRadio = "RapLifeRadio"
+    static let superbloom = "Superbloom"
+    static let africaRadio = "AfricaNow"
+    static let danceXl = "danceXL"
+    static let theEbroShow = "TheEbroShow"
+    static let charlie = "Charli"
+    static let theMatt = "TheMatt"
+    static let newMusicDaily = "NewMusicDaily"
+}

@@ -12,30 +12,33 @@ struct PlayerView: View {
     @State var isTappedNext: Bool = false
     
     var body: some View {
-        HStack {
-            Image("img_for_player")
-                .resizable(resizingMode: .stretch)
-                .aspectRatio(contentMode: .fit)
-                .cornerRadius(10)
-                .padding(.init(top: 5, leading: 15, bottom: 5, trailing: 0))
-            Text("РИТМ ХЛОП")
-                .font(.title3)
+        VStack {
             Spacer()
-            Button(action: tapPlayButton) {
-                Image(systemName: isTappedPlay ? "pause.fill" : "play.fill")
-                    .resizable()
-                    .frame(width: 25, height: 25)
-                    .foregroundColor(.black)
+            HStack {
+                Image("img_for_player")
+                    .resizable(resizingMode: .stretch)
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(10)
+                    .padding(.init(top: 5, leading: 15, bottom: 5, trailing: 0))
+                Text("РИТМ ХЛОП")
+                    .font(.title3)
+                Spacer()
+                Button(action: tapPlayButton) {
+                    Image(systemName: isTappedPlay ? "pause.fill" : "play.fill")
+                        .resizable()
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(.black)
+                }
+                Button(action: tapNextButton) {
+                    Image(systemName: "forward.fill")
+                        .resizable()
+                        .frame(width: 25, height: 20)
+                        .foregroundColor(.black)
+                        .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
+                }
             }
-            Button(action: tapNextButton) {
-                Image(systemName: "forward.fill")
-                    .resizable()
-                    .frame(width: 25, height: 20)
-                    .foregroundColor(.black)
-                    .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
-            }
+            .frame(height: 70)
         }
-        .frame(height: 70)
     }
 }
 

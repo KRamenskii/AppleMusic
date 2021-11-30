@@ -38,6 +38,7 @@ struct PlayerView: View {
                 }
             }
             .frame(height: 70)
+            .background(.white)
         }
     }
 }

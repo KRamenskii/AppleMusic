@@ -12,21 +12,18 @@ struct Section {
     let title: String
 }
 
-final class SectionModel {
-    
-    func createModels() -> [Section] {
-        return [
-            Section(icon: IconCell.playlists, title: TitleCell.playlists),
-            Section(icon: IconCell.artists, title: TitleCell.artists),
-            Section(icon: IconCell.albums, title: TitleCell.albums),
-            Section(icon: IconCell.songs, title: TitleCell.songs),
-            Section(icon: IconCell.tvShowAndFilms, title: TitleCell.tvShowAndFilms),
-            Section(icon: IconCell.videoClips, title: TitleCell.videoClips),
-            Section(icon: IconCell.genres, title: TitleCell.genres),
-            Section(icon: IconCell.compilations, title: TitleCell.compilations),
-            Section(icon: IconCell.authors, title: TitleCell.authors),
-            Section(icon: IconCell.loaded, title: TitleCell.loaded),
-            Section(icon: IconCell.homeCollection, title: TitleCell.homeCollection),
-        ]
-    }
+extension Section {
+    static var categoriesMediaPage = [
+        Section(icon: "Плейлисты", title: "music.note.list"),
+        Section(icon: "Артисты", title: "music.mic"),
+        Section(icon: "Альбомы", title: "square.stack"),
+        Section(icon: "Песни", title: "music.note"),
+        Section(icon: "Телешоу и фильмы", title: "tv"),
+        Section(icon: "Видеоклипы", title: "music.note.tv"),
+        Section(icon: "Жанры", title: "guitars"),
+        Section(icon: "Сборники", title: "person.2.crop.square.stack"),
+        Section(icon: "Авторы", title: "music.quarternote.3"),
+        Section(icon: "Загружено", title: "arrow.down.circle"),
+        Section(icon: "Домашняя коллекция", title: "music.note.house")
+    ]
 }

@@ -74,7 +74,7 @@ struct RadioView: View {
                     .padding(.init(top: 15, leading: 15, bottom: 0, trailing: 35))
                 }
             }
-            .navigationTitle(TitleTab.radio)
+            .navigationTitle("Радио")
         }
         .padding(.vertical)
     }

@@ -14,24 +14,24 @@ struct MainTabView: View {
                 MediaView()
                     .tabItem {
                         VStack {
-                            Image(systemName: IconTab.media)
-                            Text(TitleTab.media)
+                            Image(systemName: "square.stack.fill")
+                            Text("Медиатека")
                         }
                     }
 
                 RadioView()
                     .tabItem {
                         VStack {
-                            Image(systemName: IconTab.radio)
-                            Text(TitleTab.radio)
+                            Image(systemName: "dot.radiowaves.left.and.right")
+                            Text("Радио")
                         }
                     }
 
                 SearchView()
                     .tabItem {
                         VStack {
-                            Image(systemName: IconTab.search)
-                            Text(TitleTab.search)
+                            Image(systemName: "magnifyingglass")
+                            Text("Поиск")
                         }
                     }
             }

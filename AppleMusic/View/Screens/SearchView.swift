@@ -12,7 +12,7 @@ struct SearchView: View {
         NavigationView {
             ZStack {
             }
-            .navigationTitle(TitleTab.search)
+            .navigationTitle("Поиск")
         }
         .padding(.vertical)
     }

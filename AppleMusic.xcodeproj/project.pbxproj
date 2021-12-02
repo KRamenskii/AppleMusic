@@ -19,7 +19,6 @@
 		1D008B4E2748DDB300822871 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D008B4D2748DDB300822871 /* RadioView.swift */; };
 		1D008B502748DDC100822871 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D008B4F2748DDC100822871 /* SearchView.swift */; };
 		1D52C86D2755D48800FC7A1D /* SectionRadioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52C86C2755D48800FC7A1D /* SectionRadioModel.swift */; };
-		1D52C8732755DAAE00FC7A1D /* DataRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52C8722755DAAE00FC7A1D /* DataRadio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +35,6 @@
 		1D008B4D2748DDB300822871 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
 		1D008B4F2748DDC100822871 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		1D52C86C2755D48800FC7A1D /* SectionRadioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionRadioModel.swift; sourceTree = "<group>"; };
-		1D52C8722755DAAE00FC7A1D /* DataRadio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRadio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +142,6 @@
 		1D52C86F2755D70100FC7A1D /* Radio */ = {
 			isa = PBXGroup;
 			children = (
-				1D52C8722755DAAE00FC7A1D /* DataRadio.swift */,
 				1D52C86C2755D48800FC7A1D /* SectionRadioModel.swift */,
 			);
 			path = Radio;
@@ -223,7 +220,6 @@
 				1D008B502748DDC100822871 /* SearchView.swift in Sources */,
 				1D52C86D2755D48800FC7A1D /* SectionRadioModel.swift in Sources */,
 				1D008B312748D2A800822871 /* MainTabView.swift in Sources */,
-				1D52C8732755DAAE00FC7A1D /* DataRadio.swift in Sources */,
 				1D008B2F2748D2A800822871 /* AppleMusicApp.swift in Sources */,
 				1D008B4A2748DB5200822871 /* ListView.swift in Sources */,
 				1D008B482748D59E00822871 /* PlayerView.swift in Sources */,

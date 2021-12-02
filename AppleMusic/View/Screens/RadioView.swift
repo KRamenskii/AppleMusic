@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct RadioView: View {
-    private let modelRadioCells = SectionRadioModel().createModelRadio()
-    private let modelOurPresentersCells = SectionRadioModel().createModelOurPresenters()
+    private let modelRadioCells = SectionCellsRadio.collectionRadioCells
+    private let modelCollectionStations = SectionCellsRadio.collectionStations
     let rows = [GridItem(.fixed(200))]
     let columns = [GridItem(.flexible())]
     
@@ -21,7 +21,7 @@ struct RadioView: View {
                     LazyHGrid(rows: rows) {
                         ForEach(modelRadioCells.indices) { index in
                             VStack(alignment: .leading) {
-                                Text(modelRadioCells[index].title)
+                                Text("ИЗБРАННАЯ РАДИОСТАНЦИЯ")
                                     .font(.caption2)
                                     .fontWeight(.regular)
                                     .foregroundColor(Color.secondary)
@@ -46,27 +46,27 @@ struct RadioView: View {
                 Divider()
                 LazyVGrid(columns: columns) {
                     VStack(alignment: .leading) {
-                        Text("Наши ведущие")
+                        Text("Станции")
                             .font(.title)
                             .fontWeight(.bold)
-                        ForEach(modelOurPresentersCells.indices) { index in
+                        ForEach(modelCollectionStations.indices) { index in
                             HStack {
-                                Image(modelOurPresentersCells[index].nameIconImage)
+                                Image(modelCollectionStations[index].nameIconImage)
                                     .renderingMode(.original)
                                     .resizable()
                                     .cornerRadius(10)
                                     .frame(width: 120, height: 120)
                                 VStack(alignment: .leading) {
-                                    Text(modelOurPresentersCells[index].title)
+                                    Text(modelCollectionStations[index].titleHeader)
                                         .font(.title3)
                                         .fontWeight(.medium)
-                                    Text(modelOurPresentersCells[index].subtitle)
+                                    Text(modelCollectionStations[index].subtitle)
                                         .font(.subheadline)
                                         .fontWeight(.regular)
                                         .foregroundColor(Color.secondary)
                                 }
                             }
-                            if modelOurPresentersCells[index].title != "New Music Daily Radio with Zane Lowe" {
+                            if modelCollectionStations[index].titleHeader != "New Music Daily Radio with Zane Lowe" {
                                 Divider()
                             }
                         }

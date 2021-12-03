@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListView: View {
-    @State private var model: [Section] = SectionModel().createModels()
+    @State private var model: [Section] = Section.categoriesMediaPage
     @State private var selectedItem = Set<String>()
     
     var body: some View {

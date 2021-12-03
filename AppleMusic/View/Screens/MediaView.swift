@@ -19,7 +19,7 @@ struct MediaView: View {
                     MainLabel()
                 }
             }
-            .navigationTitle(TitleTab.media)
+            .navigationTitle("Медиатека")
             .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive))
             .toolbar {
                 ToolbarItem() {

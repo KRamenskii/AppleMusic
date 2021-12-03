@@ -8,22 +8,22 @@
 import Foundation
 
 struct Section {
-    let icon: String
     let title: String
+    let icon: String
 }
 
 extension Section {
     static var categoriesMediaPage = [
-        Section(icon: "Плейлисты", title: "music.note.list"),
-        Section(icon: "Артисты", title: "music.mic"),
-        Section(icon: "Альбомы", title: "square.stack"),
-        Section(icon: "Песни", title: "music.note"),
-        Section(icon: "Телешоу и фильмы", title: "tv"),
-        Section(icon: "Видеоклипы", title: "music.note.tv"),
-        Section(icon: "Жанры", title: "guitars"),
-        Section(icon: "Сборники", title: "person.2.crop.square.stack"),
-        Section(icon: "Авторы", title: "music.quarternote.3"),
-        Section(icon: "Загружено", title: "arrow.down.circle"),
-        Section(icon: "Домашняя коллекция", title: "music.note.house")
+        Section(title: "Плейлисты", icon: "music.note.list"),
+        Section(title: "Артисты", icon: "music.mic"),
+        Section(title: "Альбомы", icon: "square.stack"),
+        Section(title: "Песни", icon: "music.note"),
+        Section(title: "Телешоу и фильмы", icon: "tv"),
+        Section(title: "Видеоклипы", icon: "music.note.tv"),
+        Section(title: "Жанры", icon: "guitars"),
+        Section(title: "Сборники", icon: "person.2.crop.square.stack"),
+        Section(title: "Авторы", icon: "music.quarternote.3"),
+        Section(title: "Загружено", icon: "arrow.down.circle"),
+        Section(title: "Домашняя коллекция", icon: "music.note.house")
     ]
 }

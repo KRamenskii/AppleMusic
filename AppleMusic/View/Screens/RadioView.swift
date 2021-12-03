@@ -16,11 +16,11 @@ struct RadioView: View {
     var body: some View {
         NavigationView {
             ScrollView(.vertical) {
-                Divider()
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: rows) {
                         ForEach(modelRadioCells.indices) { index in
                             VStack(alignment: .leading) {
+                                Divider()
                                 Text("ИЗБРАННАЯ РАДИОСТАНЦИЯ")
                                     .font(.caption2)
                                     .fontWeight(.regular)
@@ -37,15 +37,15 @@ struct RadioView: View {
                                     .renderingMode(.original)
                                     .resizable()
                                     .cornerRadius(10)
-                                    .frame(width: UIScreen.main.bounds.width - 50, height: 250)
+                                    .frame(width: UIScreen.main.bounds.width - 40, height: 250)
                             }
-                            .padding(.init(top: 0, leading: 15, bottom: 10, trailing: 0))
+                            .padding(.init(top: 0, leading: 10, bottom: 10, trailing: -5))
                         }
                     }
                 }
-                Divider()
                 LazyVGrid(columns: columns) {
                     VStack(alignment: .leading) {
+                        Divider()
                         Text("Станции")
                             .font(.title)
                             .fontWeight(.bold)
@@ -56,7 +56,9 @@ struct RadioView: View {
                                     .resizable()
                                     .cornerRadius(10)
                                     .frame(width: 120, height: 120)
+                                    .padding(.init(top: 7, leading: 0, bottom: 7, trailing: 0))
                                 VStack(alignment: .leading) {
+                                    Spacer()
                                     Text(modelCollectionStations[index].titleHeader)
                                         .font(.title3)
                                         .fontWeight(.medium)
@@ -64,14 +66,16 @@ struct RadioView: View {
                                         .font(.subheadline)
                                         .fontWeight(.regular)
                                         .foregroundColor(Color.secondary)
+                                    Spacer()
+                                    if modelCollectionStations[index].titleHeader != "New Music Daily Radio with Zane Lowe" {
+                                        Divider()
+                                    }
                                 }
-                            }
-                            if modelCollectionStations[index].titleHeader != "New Music Daily Radio with Zane Lowe" {
-                                Divider()
+                                .padding(.leading, 10)
                             }
                         }
                     }
-                    .padding(.init(top: 15, leading: 15, bottom: 0, trailing: 35))
+                    .padding(.init(top: 10, leading: 10, bottom: 0, trailing: 30))
                 }
             }
             .navigationTitle("Радио")

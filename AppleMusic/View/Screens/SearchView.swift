@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State var firstName = ""
+    
     var body: some View {
         NavigationView {
-            ZStack {
+            VStack {
+                
             }
+            .searchable(text: $firstName, prompt: "Ваша Медиатека")
             .navigationTitle("Поиск")
         }
         .padding(.vertical)

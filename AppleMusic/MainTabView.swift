@@ -37,7 +37,7 @@ struct MainTabView: View {
             }
             .accentColor(.pink)
             PlayerView()
-                .padding(.bottom, 60)
+                .offset(y: -48)
         }
     }
 }

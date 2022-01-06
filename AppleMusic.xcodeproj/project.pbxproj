@@ -19,6 +19,7 @@
 		1D008B4E2748DDB300822871 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D008B4D2748DDB300822871 /* RadioView.swift */; };
 		1D008B502748DDC100822871 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D008B4F2748DDC100822871 /* SearchView.swift */; };
 		1D52C86D2755D48800FC7A1D /* SectionRadioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52C86C2755D48800FC7A1D /* SectionRadioModel.swift */; };
+		1DE9A9DB2787063D00AF0D7C /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9A9DA2787063D00AF0D7C /* BlurView.swift */; };
 		1DE9D9A827830D2600B4E128 /* SectionSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9D9A727830D2600B4E128 /* SectionSearchCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		1D008B4F2748DDC100822871 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		1D0CBAFD2784922800A42291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1D52C86C2755D48800FC7A1D /* SectionRadioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionRadioModel.swift; sourceTree = "<group>"; };
+		1DE9A9DA2787063D00AF0D7C /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		1DE9D9A727830D2600B4E128 /* SectionSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSearchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 				1D008B452748D54800822871 /* MainLabel.swift */,
 				1D008B472748D59E00822871 /* PlayerView.swift */,
 				1D008B492748DB5200822871 /* ListView.swift */,
+				1DE9A9DA2787063D00AF0D7C /* BlurView.swift */,
 			);
 			path = ModelViews;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				1D52C86D2755D48800FC7A1D /* SectionRadioModel.swift in Sources */,
 				1D008B312748D2A800822871 /* MainTabView.swift in Sources */,
 				1D008B2F2748D2A800822871 /* AppleMusicApp.swift in Sources */,
+				1DE9A9DB2787063D00AF0D7C /* BlurView.swift in Sources */,
 				1D008B4A2748DB5200822871 /* ListView.swift in Sources */,
 				1D008B482748D59E00822871 /* PlayerView.swift in Sources */,
 				1D008B4C2748DDA700822871 /* MediaView.swift in Sources */,

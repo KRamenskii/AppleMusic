@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct MainTabView: View {
+    
+    @State var isExpand = false
+    @Namespace var animation
+    
     var body: some View {
-        ZStack {
+        ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             TabView {
                 MediaView()
                     .tabItem {
@@ -36,8 +40,8 @@ struct MainTabView: View {
                     }
             }
             .accentColor(.pink)
-            PlayerView()
-                .offset(y: -48)
+            
+            PlayerView(isExpand: $isExpand, animation: animation)
         }
     }
 }

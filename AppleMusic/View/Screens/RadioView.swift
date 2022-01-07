@@ -76,11 +76,13 @@ struct RadioView: View {
                         }
                     }
                     .padding(.init(top: 10, leading: 10, bottom: 0, trailing: 30))
+                    .offset(y: -80)
                 }
             }
             .navigationTitle("Радио")
         }
         .padding(.vertical)
+        .ignoresSafeArea()
     }
 }
 

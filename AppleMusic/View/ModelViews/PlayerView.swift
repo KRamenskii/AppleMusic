@@ -43,7 +43,7 @@ struct PlayerView: View {
                 Image("img_for_player")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .cornerRadius(15)
+                    .cornerRadius(10)
                     .frame(width: isExpand ? heightImage : 55, height: isExpand ? heightImage : 55)
                     .padding(.leading, isExpand ? 0 : 20)
                 

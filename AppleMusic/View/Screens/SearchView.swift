@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct SearchView: View {
-    // MARK: - Properties
+    
     private let numberOfColumns = 2
     private let modelSearchCollection = SearchSectionCell.searchCollection
     let spacing: CGFloat = 10
     
     @State var firstName = ""
+    @State var titleNextHeader: String = ""
+    @State var id: Int = 0
+    @State var tag: Int? = nil
     
     var body: some View {
         let columns = Array(repeating: GridItem(.flexible(), spacing: spacing), count: numberOfColumns)
@@ -25,19 +28,25 @@ struct SearchView: View {
                         .fontWeight(.heavy)
                     LazyVGrid(columns: columns) {
                         ForEach(0..<modelSearchCollection.count) { index in
-                            NavigationLink(destination: Text("Hello, World!")) {
-                                ZStack(alignment: .bottomLeading) {
-                                    Image(modelSearchCollection[index].nameIconImage)
-                                        .resizable()
-                                        .blur(radius: 3)
-                                        .cornerRadius(10)
-                                        .frame(height: 130)
-                                    Text("\(modelSearchCollection[index].title)")
-                                        .fontWeight(.heavy)
-                                        .foregroundColor(.white)
-                                        .multilineTextAlignment(.leading)
-                                        .padding(.bottom)
-                                        .padding(.leading)
+                            NavigationLink(destination: CategorySearchView(titleNextHeader: $titleNextHeader, id: $id), tag: 1, selection: $tag) {
+                                Button {
+                                    titleNextHeader = modelSearchCollection[index].title
+                                    id = modelSearchCollection[index].id
+                                    self.tag = 1
+                                } label: {
+                                    ZStack(alignment: .bottomLeading) {
+                                        Image(modelSearchCollection[index].nameIconImage)
+                                            .resizable()
+                                            .blur(radius: 3)
+                                            .cornerRadius(10)
+                                            .frame(height: 130)
+                                        Text("\(modelSearchCollection[index].title)")
+                                            .fontWeight(.heavy)
+                                            .foregroundColor(.white)
+                                            .multilineTextAlignment(.leading)
+                                            .padding(.bottom)
+                                            .padding(.leading)
+                                    }
                                 }
                             }
                         }

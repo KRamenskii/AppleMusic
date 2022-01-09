@@ -21,6 +21,8 @@
 		1D52C86D2755D48800FC7A1D /* SectionRadioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52C86C2755D48800FC7A1D /* SectionRadioModel.swift */; };
 		1DE9A9DB2787063D00AF0D7C /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9A9DA2787063D00AF0D7C /* BlurView.swift */; };
 		1DE9D9A827830D2600B4E128 /* SectionSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9D9A727830D2600B4E128 /* SectionSearchCell.swift */; };
+		1DEEA4BA2789FDC1002646E1 /* CategorySearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEEA4B92789FDC0002646E1 /* CategorySearchCell.swift */; };
+		1DEFD13E2788539500FD86ED /* CategorySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFD13D2788539500FD86ED /* CategorySearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		1D52C86C2755D48800FC7A1D /* SectionRadioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionRadioModel.swift; sourceTree = "<group>"; };
 		1DE9A9DA2787063D00AF0D7C /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		1DE9D9A727830D2600B4E128 /* SectionSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSearchCell.swift; sourceTree = "<group>"; };
+		1DEEA4B92789FDC0002646E1 /* CategorySearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySearchCell.swift; sourceTree = "<group>"; };
+		1DEFD13D2788539500FD86ED /* CategorySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 				1D008B472748D59E00822871 /* PlayerView.swift */,
 				1D008B492748DB5200822871 /* ListView.swift */,
 				1DE9A9DA2787063D00AF0D7C /* BlurView.swift */,
+				1DEFD13D2788539500FD86ED /* CategorySearchView.swift */,
 			);
 			path = ModelViews;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				1DE9D9A727830D2600B4E128 /* SectionSearchCell.swift */,
+				1DEEA4B92789FDC0002646E1 /* CategorySearchCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -234,6 +240,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D008B502748DDC100822871 /* SearchView.swift in Sources */,
+				1DEEA4BA2789FDC1002646E1 /* CategorySearchCell.swift in Sources */,
+				1DEFD13E2788539500FD86ED /* CategorySearchView.swift in Sources */,
 				1DE9D9A827830D2600B4E128 /* SectionSearchCell.swift in Sources */,
 				1D52C86D2755D48800FC7A1D /* SectionRadioModel.swift in Sources */,
 				1D008B312748D2A800822871 /* MainTabView.swift in Sources */,

@@ -18,6 +18,7 @@
 		1D008B4C2748DDA700822871 /* MediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D008B4B2748DDA700822871 /* MediaView.swift */; };
 		1D008B4E2748DDB300822871 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D008B4D2748DDB300822871 /* RadioView.swift */; };
 		1D008B502748DDC100822871 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D008B4F2748DDC100822871 /* SearchView.swift */; };
+		1D0A1B34278B348100078FA1 /* ModelSearchQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A1B33278B348100078FA1 /* ModelSearchQuery.swift */; };
 		1D52C86D2755D48800FC7A1D /* SectionRadioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D52C86C2755D48800FC7A1D /* SectionRadioModel.swift */; };
 		1DE9A9DB2787063D00AF0D7C /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9A9DA2787063D00AF0D7C /* BlurView.swift */; };
 		1DE9D9A827830D2600B4E128 /* SectionSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9D9A727830D2600B4E128 /* SectionSearchCell.swift */; };
@@ -38,6 +39,7 @@
 		1D008B4B2748DDA700822871 /* MediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaView.swift; sourceTree = "<group>"; };
 		1D008B4D2748DDB300822871 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
 		1D008B4F2748DDC100822871 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		1D0A1B33278B348100078FA1 /* ModelSearchQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSearchQuery.swift; sourceTree = "<group>"; };
 		1D0CBAFD2784922800A42291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1D52C86C2755D48800FC7A1D /* SectionRadioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionRadioModel.swift; sourceTree = "<group>"; };
 		1DE9A9DA2787063D00AF0D7C /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				1DE9D9A727830D2600B4E128 /* SectionSearchCell.swift */,
 				1DEEA4B92789FDC0002646E1 /* CategorySearchCell.swift */,
+				1D0A1B33278B348100078FA1 /* ModelSearchQuery.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				1D008B4A2748DB5200822871 /* ListView.swift in Sources */,
 				1D008B482748D59E00822871 /* PlayerView.swift in Sources */,
 				1D008B4C2748DDA700822871 /* MediaView.swift in Sources */,
+				1D0A1B34278B348100078FA1 /* ModelSearchQuery.swift in Sources */,
 				1D008B4E2748DDB300822871 /* RadioView.swift in Sources */,
 				1D008B462748D54800822871 /* MainLabel.swift in Sources */,
 				1D008B422748D3DD00822871 /* SectionModel.swift in Sources */,

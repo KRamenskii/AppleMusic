@@ -17,6 +17,7 @@ struct SearchView: View {
     @State var titleNextHeader: String = ""
     @State var id: Int = 0
     @State var tag: Int? = nil
+    @ObservedObject var dataSearch = ModelSearchQuery()
     
     var body: some View {
         let columns = Array(repeating: GridItem(.flexible(), spacing: spacing), count: numberOfColumns)
@@ -54,10 +55,45 @@ struct SearchView: View {
                 }
                 .padding(.bottom, 80)
             }
+            .onAppear {
+                dataSearch.addTracks(Track.hotTracks)
+                dataSearch.addPage(CategorySearchCell.firstSection)
+                dataSearch.addPage(SectionCellsRadio.collectionRadioCells)
+                dataSearch.addPage(SectionCellsRadio.collectionStations)
+                dataSearch.addPage(SearchSectionCell.searchCollection)
+            }
             .navigationTitle("Поиск")
             .navigationBarTitleDisplayMode(.large)
             .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 20))
-            .searchable(text: $firstName, placement: .navigationBarDrawer(displayMode: .automatic), prompt: "Ваша Медиатека")
+            .searchable(text: $firstName, prompt: "Ваша Медиатека") {
+                ForEach(dataSearch.data.filter {$0.title.hasPrefix(firstName)}, id: \.self) { name in
+                    HStack(alignment: .center) {
+                        Image(name.nameIconImage)
+                            .resizable()
+                            .cornerRadius(10)
+                            .frame(width: 55, height: 55)
+                        VStack {
+                            Spacer()
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(name.title)
+                                        .font(.system(size: 17))
+                                    Text(name.subtitle)
+                                        .foregroundColor(.secondary)
+                                        .font(.system(size: 13))
+                                }
+                                Spacer()
+                                Button(action: {}) {
+                                    Image(systemName: name.type == "track" ? "ellipsis" : "chevron.right")
+                                }
+                            }
+                            Spacer()
+                        }
+                        .padding(.leading, 5)
+                    }
+                    .frame(width: UIScreen.main.bounds.width - 40)
+                }
+            }
         }
     }
 }

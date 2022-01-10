@@ -35,7 +35,7 @@ extension CategorySearchCell {
         CategorySearchCell(id: 2, firstTitle: "ОБНОВЛЁННЫЙ ПЛЕЙЛИСТ", secondTitle: "Поп-волна", thirdTitle: "Apple Music Поп на русском", nameIconImage: "nil"),
         CategorySearchCell(id: 2, firstTitle: "НОВЫЙ АЛЬБОМ", secondTitle: "Любовь. Слёзы. Движ.", thirdTitle: "Анет Сай", nameIconImage: "nil"),
         
-        CategorySearchCell(id: 3, firstTitle: "НОВЫЙ АЛЬБОМ", secondTitle: "Dawn FM", thirdTitle: "Thw Weeknd", nameIconImage: "nil"),
+        CategorySearchCell(id: 3, firstTitle: "НОВЫЙ АЛЬБОМ", secondTitle: "Dawn FM", thirdTitle: "The Weeknd", nameIconImage: "nil"),
         CategorySearchCell(id: 3, firstTitle: "ИЗБРАННЫЙ ПЛЕЙЛИСТ", secondTitle: "Поп-волна 2021", thirdTitle: "Apple Music Поп на русском", nameIconImage: "nil"),
         CategorySearchCell(id: 3, firstTitle: "НОВЫЙ ЕР", secondTitle: "Только мы - ЕР", thirdTitle: "МЫ", nameIconImage: "nil"),
         CategorySearchCell(id: 3, firstTitle: "НОВЫЙ АЛЬБОМ", secondTitle: "Universe - The 3rd Album", thirdTitle: "NCT", nameIconImage: "nil"),
@@ -47,7 +47,7 @@ extension CategorySearchCell {
         CategorySearchCell(id: 4, firstTitle: "НОВЫЙ АЛЬБОМ", secondTitle: "MNEY COUNTER MUSIC", thirdTitle: "Scally Milano", nameIconImage: "nil"),
         CategorySearchCell(id: 4, firstTitle: "НОВЫЙ АЛЬБОМ", secondTitle: "ROOMINATION", thirdTitle: "SODA LUV", nameIconImage: "nil"),
         
-        CategorySearchCell(id: 5, firstTitle: "ПРОСТРАНСТВЕННОЕ АУДИО", secondTitle: "Dawn FM", thirdTitle: "Weeknd", nameIconImage: "nil"),
+        CategorySearchCell(id: 5, firstTitle: "ПРОСТРАНСТВЕННОЕ АУДИО", secondTitle: "Dawn FM", thirdTitle: "The Weeknd", nameIconImage: "nil"),
         CategorySearchCell(id: 5, firstTitle: "ИЗБРАННЫЙ АЛЬБОМ", secondTitle: "BANDANA I", thirdTitle: "Big Baby Tape & kizaru", nameIconImage: "nil"),
         CategorySearchCell(id: 5, firstTitle: "НОВЫЙ АЛЬБОМ", secondTitle: "Выход в город", thirdTitle: "Noize MC", nameIconImage: "nil"),
         CategorySearchCell(id: 5, firstTitle: "ПРОСТРАНСТВЕННОЕ АУДИО", secondTitle: "На праздночной ноте 2021", thirdTitle: "Apple Music", nameIconImage: "nil"),

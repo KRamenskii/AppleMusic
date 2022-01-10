@@ -91,7 +91,6 @@ struct SearchView: View {
                         }
                         .padding(.leading, 5)
                     }
-                    .frame(width: UIScreen.main.bounds.width - 40)
                 }
             }
         }

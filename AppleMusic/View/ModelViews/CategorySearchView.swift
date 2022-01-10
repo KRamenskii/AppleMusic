@@ -64,6 +64,7 @@ struct CategorySearchView: View {
                 VStack {
                     Divider()
                         .padding(.trailing, 20)
+                        .padding(.leading, 20)
                     
                     HStack(alignment: .bottom) {
                         Text("Плейлисты")
@@ -76,6 +77,7 @@ struct CategorySearchView: View {
                         }
                     }
                     .padding(.trailing, 20)
+                    .padding(.leading, 20)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         let rows = Array(repeating: GridItem(.flexible(minimum: heightCell), spacing: spacing), count: numberOfRows)
@@ -95,15 +97,16 @@ struct CategorySearchView: View {
                                 }
                             }
                         }
+                        .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 20))
                     }
                 }
-                .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 0))
                 
                 // MARK: - The third section
                 
                 VStack {
                     Divider()
                         .padding(.trailing, 20)
+                        .padding(.leading, 20)
                     
                     HStack(alignment: .bottom) {
                         Text("Горячие треки")
@@ -116,6 +119,7 @@ struct CategorySearchView: View {
                         }
                     }
                     .padding(.trailing, 20)
+                    .padding(.leading, 20)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         let rows = Array(repeating: GridItem(.flexible(minimum: 55)), count: 4)
@@ -150,15 +154,16 @@ struct CategorySearchView: View {
                                 .frame(width: widthTrackCell)
                             }
                         }
+                        .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 20))
                     }
                 }
-                .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 0))
                 
                 // MARK: - Fourth section
                 
                 VStack {
                     Divider()
                         .padding(.trailing, 20)
+                        .padding(.leading, 20)
 
                     HStack(alignment: .bottom) {
                         Text("Новые релизы")
@@ -171,6 +176,7 @@ struct CategorySearchView: View {
                         }
                     }
                     .padding(.trailing, 20)
+                    .padding(.leading, 20)
 
                     ScrollView(.horizontal, showsIndicators: false) {
                         let rows = Array(repeating: GridItem(.flexible(minimum: heightCell), spacing: spacing), count: numberOfRows)
@@ -190,15 +196,16 @@ struct CategorySearchView: View {
                                 }
                             }
                         }
+                        .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 20))
                     }
                 }
-                .padding(.init(top: 0, leading: 20, bottom: 10, trailing: 0))
 
                 // MARK: - Fifth section
 
                 VStack {
                     Divider()
                         .padding(.trailing, 20)
+                        .padding(.leading, 20)
 
                     HStack(alignment: .bottom) {
                         Text("Плейлисты по артистам")
@@ -211,6 +218,7 @@ struct CategorySearchView: View {
                         }
                     }
                     .padding(.trailing, 20)
+                    .padding(.leading, 20)
 
                     ScrollView(.horizontal, showsIndicators: false) {
                         let rows = Array(repeating: GridItem(.fixed(heightCell), spacing: spacing), count: 1)
@@ -230,9 +238,9 @@ struct CategorySearchView: View {
                                 }
                             }
                         }
+                        .padding(.init(top: 0, leading: 20, bottom: 70, trailing: 20))
                     }
                 }
-                .padding(.init(top: 0, leading: 20, bottom: 70, trailing: 0))
             }
         }
         .navigationTitle(titleNextHeader)

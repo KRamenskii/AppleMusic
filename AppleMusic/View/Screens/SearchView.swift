@@ -53,7 +53,7 @@ struct SearchView: View {
                         }
                     }
                 }
-                .padding(.bottom, 80)
+                .padding(.bottom, 70)
             }
             .onAppear {
                 dataSearch.addTracks(Track.hotTracks)

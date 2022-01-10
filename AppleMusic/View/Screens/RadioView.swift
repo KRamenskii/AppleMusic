@@ -39,7 +39,7 @@ struct RadioView: View {
                                     .cornerRadius(10)
                                     .frame(width: UIScreen.main.bounds.width - 40, height: 250)
                             }
-                            .padding(.init(top: 0, leading: 10, bottom: 10, trailing: -5))
+                            .padding(.init(top: 0, leading: 20, bottom: 10, trailing: -15))
                         }
                     }
                 }
@@ -75,8 +75,7 @@ struct RadioView: View {
                             }
                         }
                     }
-                    .padding(.init(top: 10, leading: 10, bottom: 0, trailing: 30))
-                    .offset(y: -80)
+                    .padding(.init(top: 10, leading: 20, bottom: 80, trailing: 20))
                 }
             }
             .navigationTitle("Радио")

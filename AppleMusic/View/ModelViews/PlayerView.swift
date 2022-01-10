@@ -213,7 +213,7 @@ struct PlayerView: View {
                 .frame(width: UIScreen.main.bounds.width - 40)
             }
         }
-        .frame(maxHeight: isExpand ? .infinity : 80)
+        .frame(maxHeight: isExpand ? .infinity : 70)
         .frame(width: UIScreen.main.bounds.width)
         .background(
             VStack(spacing: 0) {

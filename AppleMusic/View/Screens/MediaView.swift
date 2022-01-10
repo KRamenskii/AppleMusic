@@ -32,6 +32,7 @@ struct MediaView: View {
             }
         }
         .padding(.vertical)
+        .ignoresSafeArea()
     }
 }
 

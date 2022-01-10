@@ -37,26 +37,26 @@ struct CategorySearchView: View {
                             VStack(alignment: .leading) {
                                 Divider()
                                 Text(filtered[index].firstTitle)
-                                    .font(.caption2)
+                                    .font(.system(size: 11))
                                     .fontWeight(.regular)
                                     .foregroundColor(.secondary)
                                 Text(filtered[index].secondTitle)
-                                    .font(.title2)
+                                    .font(.system(size: 18))
                                     .fontWeight(.regular)
                                     .foregroundColor(.black)
                                 Text(filtered[index].thirdTitle)
-                                    .font(.title3)
+                                    .font(.system(size: 18))
                                     .fontWeight(.regular)
                                     .foregroundColor(.secondary)
                                 Image(filtered[index].nameIconImage)
                                     .resizable()
                                     .renderingMode(.original)
                                     .cornerRadius(10)
-                                    .frame(width: UIScreen.main.bounds.width - 40, height: 250)
+                                    .frame(width: widthTrackCell, height: widthTrackCell * 0.7)
                             }
-                            .padding(.init(top: 0, leading: 20, bottom: 10, trailing: -20))
                         }
                     }
+                    .padding(.init(top: 0, leading: 20, bottom: 10, trailing: 20))
                 }
                 
                 // MARK: - The second section
@@ -64,17 +64,20 @@ struct CategorySearchView: View {
                 VStack {
                     Divider()
                         .padding(.trailing, 20)
+                        .padding(.leading, 20)
                     
-                    HStack {
+                    HStack(alignment: .bottom) {
                         Text("Плейлисты")
-                            .font(.title2)
+                            .font(.title3)
                             .fontWeight(.bold)
                         Spacer()
                         Button(action: {}) {
                             Text("См. все")
+                                .font(.system(size: 13))
                         }
                     }
                     .padding(.trailing, 20)
+                    .padding(.leading, 20)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         let rows = Array(repeating: GridItem(.flexible(minimum: heightCell), spacing: spacing), count: numberOfRows)
@@ -87,30 +90,36 @@ struct CategorySearchView: View {
                                         .cornerRadius(10)
                                         .frame(width: widthSquareImage, height: widthSquareImage)
                                     Text("Name playList")
+                                        .font(.system(size: 13))
                                     Text("Apple Music")
+                                        .font(.system(size: 13))
+                                        .foregroundColor(.secondary)
                                 }
                             }
                         }
+                        .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 20))
                     }
                 }
-                .padding(.init(top: 0, leading: 20, bottom: 10, trailing: 0))
                 
                 // MARK: - The third section
                 
                 VStack {
                     Divider()
                         .padding(.trailing, 20)
+                        .padding(.leading, 20)
                     
-                    HStack {
+                    HStack(alignment: .bottom) {
                         Text("Горячие треки")
-                            .font(.title2)
+                            .font(.title3)
                             .fontWeight(.bold)
                         Spacer()
                         Button(action: {}) {
                             Text("См. все")
+                                .font(.system(size: 13))
                         }
                     }
                     .padding(.trailing, 20)
+                    .padding(.leading, 20)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         let rows = Array(repeating: GridItem(.flexible(minimum: 55)), count: 4)
@@ -145,26 +154,29 @@ struct CategorySearchView: View {
                                 .frame(width: widthTrackCell)
                             }
                         }
+                        .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 20))
                     }
                 }
-                .padding(.init(top: 0, leading: 20, bottom: 10, trailing: 0))
                 
                 // MARK: - Fourth section
                 
                 VStack {
                     Divider()
                         .padding(.trailing, 20)
+                        .padding(.leading, 20)
 
-                    HStack {
+                    HStack(alignment: .bottom) {
                         Text("Новые релизы")
-                            .font(.title2)
+                            .font(.title3)
                             .fontWeight(.bold)
                         Spacer()
                         Button(action: {}) {
                             Text("См. все")
+                                .font(.system(size: 13))
                         }
                     }
                     .padding(.trailing, 20)
+                    .padding(.leading, 20)
 
                     ScrollView(.horizontal, showsIndicators: false) {
                         let rows = Array(repeating: GridItem(.flexible(minimum: heightCell), spacing: spacing), count: numberOfRows)
@@ -177,30 +189,36 @@ struct CategorySearchView: View {
                                         .cornerRadius(10)
                                         .frame(width: widthSquareImage, height: widthSquareImage)
                                     Text("Название альбома")
+                                        .font(.system(size: 13))
                                     Text("Имя артиста")
+                                        .font(.system(size: 13))
+                                        .foregroundColor(.secondary)
                                 }
                             }
                         }
+                        .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 20))
                     }
                 }
-                .padding(.init(top: 0, leading: 20, bottom: 10, trailing: 0))
 
                 // MARK: - Fifth section
 
                 VStack {
                     Divider()
                         .padding(.trailing, 20)
+                        .padding(.leading, 20)
 
-                    HStack {
+                    HStack(alignment: .bottom) {
                         Text("Плейлисты по артистам")
                             .font(.title2)
                             .fontWeight(.bold)
                         Spacer()
                         Button(action: {}) {
                             Text("См. все")
+                                .font(.system(size: 13))
                         }
                     }
                     .padding(.trailing, 20)
+                    .padding(.leading, 20)
 
                     ScrollView(.horizontal, showsIndicators: false) {
                         let rows = Array(repeating: GridItem(.fixed(heightCell), spacing: spacing), count: 1)
@@ -213,13 +231,16 @@ struct CategorySearchView: View {
                                         .cornerRadius(10)
                                         .frame(width: widthSquareImage, height: widthSquareImage)
                                     Text("Имя артиста: главное")
+                                        .font(.system(size: 13))
                                     Text("Apple Music")
+                                        .font(.system(size: 13))
+                                        .foregroundColor(.secondary)
                                 }
                             }
                         }
+                        .padding(.init(top: 0, leading: 20, bottom: 70, trailing: 20))
                     }
                 }
-                .padding(.init(top: 0, leading: 20, bottom: 80, trailing: 0))
             }
         }
         .navigationTitle(titleNextHeader)

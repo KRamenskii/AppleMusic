@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CategorySearchView: View {
     
-    @Binding var titleNextHeader: String
-    @Binding var id: Int
+    var titleNextHeader: String
+    var id: Int
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.colorScheme) var colorScheme
@@ -246,6 +246,7 @@ struct CategorySearchView: View {
         .navigationTitle(titleNextHeader)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton, trailing: shareButton)
+        .background(Color.white)
     }
 }
 

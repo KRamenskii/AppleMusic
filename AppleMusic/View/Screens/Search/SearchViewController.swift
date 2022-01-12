@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SearchViewController: UIViewController {
     
@@ -65,6 +66,11 @@ extension SearchViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let model = dataSearchCategory[indexPath.row]
+        let page = CategorySearchView(titleNextHeader: model.title, id: model.id)
+        
+        let host = UIHostingController(rootView: page)
+        navigationController?.pushViewController(host, animated: false)
         
     }
 }

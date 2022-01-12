@@ -13,6 +13,7 @@ struct SearchView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> some UIViewController {
         let searchNavController = UINavigationController(rootViewController: SearchViewController())
         searchNavController.navigationBar.isTranslucent = false
+        searchNavController.navigationBar.backgroundColor = .white
         
         return searchNavController
     }

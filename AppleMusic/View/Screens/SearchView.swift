@@ -11,8 +11,10 @@ import UIKit
 struct SearchView: UIViewControllerRepresentable {
     
     func makeUIViewController(context: Context) -> some UIViewController {
+        let searchNavController = UINavigationController(rootViewController: SearchViewController())
+        searchNavController.navigationBar.isTranslucent = false
         
-        return SearchViewController()
+        return searchNavController
     }
     
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {

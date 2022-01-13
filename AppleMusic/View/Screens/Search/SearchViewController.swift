@@ -18,7 +18,6 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView()
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         self.collectionView.register(CategorySearchCollectionViewCell.self, forCellWithReuseIdentifier: CategorySearchCollectionViewCell.identifier)
@@ -35,13 +34,6 @@ class SearchViewController: UIViewController {
         layout.scrollDirection = .vertical
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         self.view = collectionView
-    }
-    
-    // MARK: - Settings
-    
-    private func setupView() {
-        self.navigationItem.title = "Поиск"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 

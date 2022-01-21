@@ -19,7 +19,7 @@ class CategorySearchCollectionViewCell: UICollectionViewCell {
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.layer.cornerRadius = Metric.cornerRadius
-        image.alpha = 0.9
+        image.alpha = Metric.alphaImage
         
         return image
     }()
@@ -29,7 +29,7 @@ class CategorySearchCollectionViewCell: UICollectionViewCell {
         
         title.font = .systemFont(ofSize: Metric.fontSize, weight: .bold)
         title.textColor = .white
-        title.numberOfLines = 2
+        title.numberOfLines = Metric.numberOfLines
         
         return title
     }()
@@ -62,7 +62,7 @@ class CategorySearchCollectionViewCell: UICollectionViewCell {
         imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         
         title.translatesAutoresizingMaskIntoConstraints = false
-        title.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
+        title.widthAnchor.constraint(equalToConstant: Metric.widthLabel).isActive = true
         title.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: Metric.leadingAnchor).isActive = true
         title.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Metric.bottomAnchor).isActive = true
     }
@@ -77,11 +77,12 @@ class CategorySearchCollectionViewCell: UICollectionViewCell {
     // MARK: - Constants for constraints
     
     enum Metric {
-        static let width: CGFloat = (UIScreen.main.bounds.width - 50) / 2
-        static let height: CGFloat = width * 0.7
+        static let widthLabel: CGFloat = (UIScreen.main.bounds.width - 50) / 2 - leadingAnchor
         static let leadingAnchor: CGFloat = 15
         static let bottomAnchor: CGFloat = -15
         static let cornerRadius: CGFloat = 10
         static let fontSize: CGFloat = 13
+        static let alphaImage: CGFloat = 0.9
+        static let numberOfLines = 2
     }
 }

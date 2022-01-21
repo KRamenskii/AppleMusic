@@ -15,12 +15,7 @@ struct CategorySearchView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.colorScheme) var colorScheme
     
-    let rows = [GridItem(.fixed(200))]
-    let spacing: CGFloat = 10
-    let widthSquareImage = (UIScreen.main.bounds.width - 50) / 2
-    let numberOfRows = 2
-    let heightCell: CGFloat = (UIScreen.main.bounds.width - 50) / 2 + 50
-    let widthTrackCell: CGFloat = UIScreen.main.bounds.width - 40
+    let rows = [GridItem(.fixed(Metric.widthTrackCell))]
     
     var modelCategorySearch = CategorySearchCell.firstSection
     var modelHotTracks = Track.hotTracks
@@ -37,34 +32,34 @@ struct CategorySearchView: View {
                             VStack(alignment: .leading) {
                                 Divider()
                                 Text(filtered[index].firstTitle)
-                                    .font(.system(size: 11))
+                                    .font(.system(size: Metric.fontSizeHeaderTitleFirstSection))
                                     .fontWeight(.regular)
                                     .foregroundColor(.secondary)
                                 Text(filtered[index].secondTitle)
-                                    .font(.system(size: 18))
+                                    .font(.system(size: Metric.fontSizeTitleFirstSection))
                                     .fontWeight(.regular)
                                     .foregroundColor(.black)
                                 Text(filtered[index].thirdTitle)
-                                    .font(.system(size: 18))
+                                    .font(.system(size: Metric.fontSizeTitleFirstSection))
                                     .fontWeight(.regular)
                                     .foregroundColor(.secondary)
                                 Image(filtered[index].nameIconImage)
                                     .resizable()
                                     .renderingMode(.original)
-                                    .cornerRadius(10)
-                                    .frame(width: widthTrackCell, height: widthTrackCell * 0.7)
+                                    .cornerRadius(Metric.cornerRadius)
+                                    .frame(width: Metric.widthTrackCell, height: Metric.heightTrackCell)
                             }
                         }
                     }
-                    .padding(.init(top: 0, leading: 20, bottom: 10, trailing: 20))
+                    .padding(.init(top: Metric.verticalPadding, leading: Metric.horizontalPadding, bottom: Metric.verticalPadding, trailing: Metric.horizontalPadding))
                 }
                 
                 // MARK: - The second section
                 
                 VStack {
                     Divider()
-                        .padding(.trailing, 20)
-                        .padding(.leading, 20)
+                        .padding(.trailing, Metric.horizontalPadding)
+                        .padding(.leading, Metric.horizontalPadding)
                     
                     HStack(alignment: .bottom) {
                         Text("Плейлисты")
@@ -73,31 +68,31 @@ struct CategorySearchView: View {
                         Spacer()
                         Button(action: {}) {
                             Text("См. все")
-                                .font(.system(size: 13))
+                                .font(.system(size: Metric.fontSizeTextButton))
                         }
                     }
-                    .padding(.trailing, 20)
-                    .padding(.leading, 20)
+                    .padding(.trailing, Metric.horizontalPadding)
+                    .padding(.leading, Metric.horizontalPadding)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        let rows = Array(repeating: GridItem(.flexible(minimum: heightCell), spacing: spacing), count: numberOfRows)
+                        let rows = Array(repeating: GridItem(.flexible(minimum: Metric.heightCell), spacing: Metric.spacing), count: Metric.numberOfRows)
                         LazyHGrid(rows: rows) {
                             ForEach(0..<10) {_ in
                                 VStack(alignment: .leading) {
                                     Image("nil")
                                         .resizable()
                                         .renderingMode(.original)
-                                        .cornerRadius(10)
-                                        .frame(width: widthSquareImage, height: widthSquareImage)
+                                        .cornerRadius(Metric.cornerRadius)
+                                        .frame(width: Metric.widthSquareImage, height: Metric.widthSquareImage)
                                     Text("Name playList")
-                                        .font(.system(size: 13))
+                                        .font(.system(size: Metric.fontSizeSquareItem))
                                     Text("Apple Music")
-                                        .font(.system(size: 13))
+                                        .font(.system(size: Metric.fontSizeSquareItem))
                                         .foregroundColor(.secondary)
                                 }
                             }
                         }
-                        .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 20))
+                        .padding(.init(top: Metric.verticalPadding, leading: Metric.horizontalPadding, bottom: Metric.verticalPadding, trailing: Metric.horizontalPadding))
                     }
                 }
                 
@@ -105,8 +100,8 @@ struct CategorySearchView: View {
                 
                 VStack {
                     Divider()
-                        .padding(.trailing, 20)
-                        .padding(.leading, 20)
+                        .padding(.trailing, Metric.horizontalPadding)
+                        .padding(.leading, Metric.horizontalPadding)
                     
                     HStack(alignment: .bottom) {
                         Text("Горячие треки")
@@ -115,21 +110,21 @@ struct CategorySearchView: View {
                         Spacer()
                         Button(action: {}) {
                             Text("См. все")
-                                .font(.system(size: 13))
+                                .font(.system(size: Metric.fontSizeTextButton))
                         }
                     }
-                    .padding(.trailing, 20)
-                    .padding(.leading, 20)
+                    .padding(.trailing, Metric.horizontalPadding)
+                    .padding(.leading, Metric.horizontalPadding)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        let rows = Array(repeating: GridItem(.flexible(minimum: 55)), count: 4)
+                        let rows = Array(repeating: GridItem(.flexible(minimum: Metric.frameMiniItem)), count: Metric.countMiniItem)
                         LazyHGrid(rows: rows) {
                             ForEach(modelHotTracks.indices) { index in
                                 HStack(alignment: .center) {
                                     Image(modelHotTracks[index].nameIconImage)
                                         .resizable()
-                                        .cornerRadius(10)
-                                        .frame(width: 55, height: 55)
+                                        .cornerRadius(Metric.cornerRadius)
+                                        .frame(width: Metric.frameMiniItem, height: Metric.frameMiniItem)
                                     
                                     VStack {
                                         Divider()
@@ -137,10 +132,10 @@ struct CategorySearchView: View {
                                         HStack {
                                             VStack(alignment: .leading) {
                                                 Text(modelHotTracks[index].titleHeader)
-                                                    .font(.system(size: 17))
+                                                    .font(.system(size: Metric.fontSizeTitleMiniItem))
                                                 Text(modelHotTracks[index].titleArtist)
                                                     .foregroundColor(.secondary)
-                                                    .font(.system(size: 13))
+                                                    .font(.system(size: Metric.fontSizeSubtitleMiniItem))
                                             }
                                             Spacer()
                                             Button(action: {}) {
@@ -149,12 +144,12 @@ struct CategorySearchView: View {
                                         }
                                         Spacer()
                                     }
-                                    .padding(.leading, 5)
+                                    .padding(.leading, Metric.leadingPaddingMiniItem)
                                 }
-                                .frame(width: widthTrackCell)
+                                .frame(width: Metric.widthTrackCell)
                             }
                         }
-                        .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 20))
+                        .padding(.init(top: Metric.verticalPadding, leading: Metric.horizontalPadding, bottom: Metric.verticalPadding, trailing: Metric.horizontalPadding))
                     }
                 }
                 
@@ -162,8 +157,8 @@ struct CategorySearchView: View {
                 
                 VStack {
                     Divider()
-                        .padding(.trailing, 20)
-                        .padding(.leading, 20)
+                        .padding(.trailing, Metric.horizontalPadding)
+                        .padding(.leading, Metric.horizontalPadding)
 
                     HStack(alignment: .bottom) {
                         Text("Новые релизы")
@@ -172,31 +167,31 @@ struct CategorySearchView: View {
                         Spacer()
                         Button(action: {}) {
                             Text("См. все")
-                                .font(.system(size: 13))
+                                .font(.system(size: Metric.fontSizeTextButton))
                         }
                     }
-                    .padding(.trailing, 20)
-                    .padding(.leading, 20)
+                    .padding(.trailing, Metric.horizontalPadding)
+                    .padding(.leading, Metric.horizontalPadding)
 
                     ScrollView(.horizontal, showsIndicators: false) {
-                        let rows = Array(repeating: GridItem(.flexible(minimum: heightCell), spacing: spacing), count: numberOfRows)
+                        let rows = Array(repeating: GridItem(.flexible(minimum: Metric.heightCell), spacing: Metric.spacing), count: Metric.numberOfRows)
                         LazyHGrid(rows: rows) {
                             ForEach(0..<10) {_ in
                                 VStack(alignment: .leading) {
                                     Image("nil")
                                         .resizable()
                                         .renderingMode(.original)
-                                        .cornerRadius(10)
-                                        .frame(width: widthSquareImage, height: widthSquareImage)
+                                        .cornerRadius(Metric.cornerRadius)
+                                        .frame(width: Metric.widthSquareImage, height: Metric.widthSquareImage)
                                     Text("Название альбома")
-                                        .font(.system(size: 13))
+                                        .font(.system(size: Metric.fontSizeSquareItem))
                                     Text("Имя артиста")
-                                        .font(.system(size: 13))
+                                        .font(.system(size: Metric.fontSizeSquareItem))
                                         .foregroundColor(.secondary)
                                 }
                             }
                         }
-                        .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 20))
+                        .padding(.init(top: Metric.verticalPadding, leading: Metric.horizontalPadding, bottom: Metric.verticalPadding, trailing: Metric.horizontalPadding))
                     }
                 }
 
@@ -204,8 +199,8 @@ struct CategorySearchView: View {
 
                 VStack {
                     Divider()
-                        .padding(.trailing, 20)
-                        .padding(.leading, 20)
+                        .padding(.trailing, Metric.horizontalPadding)
+                        .padding(.leading, Metric.horizontalPadding)
 
                     HStack(alignment: .bottom) {
                         Text("Плейлисты по артистам")
@@ -214,31 +209,31 @@ struct CategorySearchView: View {
                         Spacer()
                         Button(action: {}) {
                             Text("См. все")
-                                .font(.system(size: 13))
+                                .font(.system(size: Metric.fontSizeTextButton))
                         }
                     }
-                    .padding(.trailing, 20)
-                    .padding(.leading, 20)
+                    .padding(.trailing, Metric.horizontalPadding)
+                    .padding(.leading, Metric.horizontalPadding)
 
                     ScrollView(.horizontal, showsIndicators: false) {
-                        let rows = Array(repeating: GridItem(.fixed(heightCell), spacing: spacing), count: 1)
+                        let rows = Array(repeating: GridItem(.fixed(Metric.heightCell), spacing: Metric.spacing), count: 1)
                         LazyHGrid(rows: rows) {
                             ForEach(0..<10) {_ in
                                 VStack(alignment: .leading) {
                                     Image("nil")
                                         .resizable()
                                         .renderingMode(.original)
-                                        .cornerRadius(10)
-                                        .frame(width: widthSquareImage, height: widthSquareImage)
+                                        .cornerRadius(Metric.cornerRadius)
+                                        .frame(width: Metric.widthSquareImage, height: Metric.widthSquareImage)
                                     Text("Имя артиста: главное")
-                                        .font(.system(size: 13))
+                                        .font(.system(size: Metric.fontSizeSquareItem))
                                     Text("Apple Music")
-                                        .font(.system(size: 13))
+                                        .font(.system(size: Metric.fontSizeSquareItem))
                                         .foregroundColor(.secondary)
                                 }
                             }
                         }
-                        .padding(.init(top: 0, leading: 20, bottom: 70, trailing: 20))
+                        .padding(.init(top: Metric.verticalPadding, leading: Metric.horizontalPadding, bottom: Metric.bottomPadding, trailing: Metric.horizontalPadding))
                     }
                 }
             }
@@ -251,6 +246,7 @@ struct CategorySearchView: View {
 }
 
 // MARK: - Buttons in NavigationView
+
 extension CategorySearchView {
     
     var backButton: some View {
@@ -265,8 +261,35 @@ extension CategorySearchView {
         Button(action: {}) {
             Image(colorScheme == .dark ? "shareButtonDark" : "shareButton")
                 .resizable()
-                .frame(width: 23, height: 23)
+                .frame(width: Metric.frameShareButton, height: Metric.frameShareButton)
         }
     }
     
+}
+
+// MARK: - Constants
+
+extension CategorySearchView {
+    enum Metric {
+        static let widthSquareImage: CGFloat = (UIScreen.main.bounds.width - 50) / 2
+        static let fontSizeSquareItem: CGFloat = 13
+        static let heightCell: CGFloat = (UIScreen.main.bounds.width - 50) / 2 + 50
+        static let widthTrackCell: CGFloat = UIScreen.main.bounds.width - 40
+        static let heightTrackCell: CGFloat = widthTrackCell * 0.7
+        static let numberOfRows = 2
+        static let spacing: CGFloat = 10
+        static let frameShareButton: CGFloat = 23
+        static let horizontalPadding: CGFloat = 20
+        static let verticalPadding: CGFloat = 0
+        static let bottomPadding: CGFloat = 70
+        static let fontSizeTextButton: CGFloat = 13
+        static let cornerRadius: CGFloat = 10
+        static let fontSizeTitleFirstSection: CGFloat = 18
+        static let fontSizeHeaderTitleFirstSection: CGFloat = 11
+        static let frameMiniItem: CGFloat = 55
+        static let countMiniItem = 4
+        static let leadingPaddingMiniItem: CGFloat = 5
+        static let fontSizeTitleMiniItem: CGFloat = 17
+        static let fontSizeSubtitleMiniItem: CGFloat = 13
+    }
 }

@@ -26,11 +26,12 @@ class SearchViewController: UIViewController {
     
     override func loadView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        let width: CGFloat = (UIScreen.main.bounds.width - 50) / 2
-        let height: CGFloat = width * 0.7
-
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 80, right: 20)
-        layout.itemSize = CGSize(width: width, height: height)
+        layout.sectionInset = UIEdgeInsets(
+            top: Metric.topPaddingItem,
+            left: Metric.leftPaddingItem,
+            bottom: Metric.bottomPaddingItem,
+            right: Metric.rightPaddingItem)
+        layout.itemSize = CGSize(width: Metric.widthItemSize, height: Metric.heightItemSize)
         layout.scrollDirection = .vertical
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         self.view = collectionView
@@ -80,8 +81,21 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let width = UIScreen.main.bounds.width - 40
-        
-        return CGSize(width: width, height: 30)
+        return CGSize(width: Metric.widthHeader, height: Metric.heightHeader)
+    }
+}
+
+// MARK: - Constants
+
+extension SearchViewController {
+    enum Metric {
+        static let widthItemSize: CGFloat = (UIScreen.main.bounds.width - 50) / 2
+        static let heightItemSize: CGFloat = widthItemSize * 0.7
+        static let topPaddingItem: CGFloat = 10
+        static let leftPaddingItem: CGFloat = 20
+        static let bottomPaddingItem: CGFloat = 80
+        static let rightPaddingItem: CGFloat = 20
+        static let widthHeader: CGFloat = UIScreen.main.bounds.width - 40
+        static let heightHeader: CGFloat = 30
     }
 }

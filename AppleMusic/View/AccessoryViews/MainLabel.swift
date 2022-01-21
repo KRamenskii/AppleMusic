@@ -12,15 +12,23 @@ struct MainLabel: View {
         VStack {
             Text("Ищете свою музыку?")
                 .fontWeight(.bold)
-                .font(.system(size: 23
-                             ))
+                .font(.system(size: Metric.fontSizeTitle))
             Text("Здесь появися купленная Вами в iTunes Store музыка.")
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
-                .lineLimit(2)
-                .font(.system(size: 18))
-                .frame(width: 300)
+                .lineLimit(Metric.lineLimit)
+                .font(.system(size: Metric.fontSizeSubtitle))
+                .frame(width: Metric.width)
         }
+    }
+    
+    // MARK: - Constants
+    
+    enum Metric {
+        static let fontSizeTitle: CGFloat = 23
+        static let fontSizeSubtitle: CGFloat = 18
+        static let width: CGFloat = 300
+        static let lineLimit = 2
     }
 }
 

@@ -62,7 +62,7 @@ class CategorySearchCollectionViewCell: UICollectionViewCell {
         imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         
         title.translatesAutoresizingMaskIntoConstraints = false
-        title.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
+        title.widthAnchor.constraint(equalToConstant: Metric.widthLabel).isActive = true
         title.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: Metric.leadingAnchor).isActive = true
         title.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Metric.bottomAnchor).isActive = true
     }
@@ -77,8 +77,7 @@ class CategorySearchCollectionViewCell: UICollectionViewCell {
     // MARK: - Constants for constraints
     
     enum Metric {
-        static let width: CGFloat = (UIScreen.main.bounds.width - 50) / 2
-        static let height: CGFloat = width * 0.7
+        static let widthLabel: CGFloat = (UIScreen.main.bounds.width - 50) / 2 - leadingAnchor
         static let leadingAnchor: CGFloat = 15
         static let bottomAnchor: CGFloat = -15
         static let cornerRadius: CGFloat = 10

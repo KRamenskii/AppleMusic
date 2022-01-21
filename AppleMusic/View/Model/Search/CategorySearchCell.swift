@@ -77,6 +77,12 @@ extension CategorySearchCell {
         CategorySearchCell(id: 9, firstTitle: "НОВЫЙ ЕР", secondTitle: "закат диснея - ЕР", thirdTitle: "гречка", nameIconImage: "nil"),
         CategorySearchCell(id: 9, firstTitle: "НОВЫЙ АЛЬБОМ", secondTitle: "Помнишь - ЕР", thirdTitle: "Гарик Сукачёв", nameIconImage: "nil"),
         
+        CategorySearchCell(id: 10, firstTitle: "ИЗБРАННЫЙ АЛЬБОМ", secondTitle: "BANDANA I", thirdTitle: "Big Baby Tape & kizaru", nameIconImage: "nil"),
+        CategorySearchCell(id: 10, firstTitle: "НОВЫЙ АЛЬБОМ", secondTitle: "Выход в город", thirdTitle: "Noize MC", nameIconImage: "nil"),
+        CategorySearchCell(id: 10, firstTitle: "НОВЫЙ АЛЬБОМ", secondTitle: "Психи попадают в топ", thirdTitle: "Макс Корж", nameIconImage: "nil"),
+        CategorySearchCell(id: 10, firstTitle: "НОВЫЙ ЕР", secondTitle: "закат диснея - ЕР", thirdTitle: "гречка", nameIconImage: "nil"),
+        CategorySearchCell(id: 10, firstTitle: "НОВЫЙ АЛЬБОМ", secondTitle: "Помнишь - ЕР", thirdTitle: "Гарик Сукачёв", nameIconImage: "nil"),
+        
         CategorySearchCell(id: 11, firstTitle: "СЛУШАЙТЕ ПРЯМО СЕЙЧАС", secondTitle: "Boiler Room", thirdTitle: "Apple Music", nameIconImage: "nil"),
         CategorySearchCell(id: 11, firstTitle: "НОВЫЙ МИКСЫ", secondTitle: "Диджей-сеты с вечеринок Cercle на легендарных площадках", thirdTitle: " ", nameIconImage: "nil"),
         CategorySearchCell(id: 11, firstTitle: " ", secondTitle: "Compiled & Mixed 04 (DJ Mix)", thirdTitle: "John Digweed", nameIconImage: "nil"),

@@ -19,7 +19,7 @@ class CategorySearchCollectionViewCell: UICollectionViewCell {
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.layer.cornerRadius = Metric.cornerRadius
-        image.alpha = 0.9
+        image.alpha = Metric.alphaImage
         
         return image
     }()
@@ -29,7 +29,7 @@ class CategorySearchCollectionViewCell: UICollectionViewCell {
         
         title.font = .systemFont(ofSize: Metric.fontSize, weight: .bold)
         title.textColor = .white
-        title.numberOfLines = 2
+        title.numberOfLines = Metric.numberOfLines
         
         return title
     }()
@@ -83,5 +83,7 @@ class CategorySearchCollectionViewCell: UICollectionViewCell {
         static let bottomAnchor: CGFloat = -15
         static let cornerRadius: CGFloat = 10
         static let fontSize: CGFloat = 13
+        static let alphaImage: CGFloat = 0.9
+        static let numberOfLines = 2
     }
 }

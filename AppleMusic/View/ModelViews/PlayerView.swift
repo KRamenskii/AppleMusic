@@ -10,14 +10,12 @@ import SwiftUI
 struct PlayerView: View {
     @State var isTappedPlay: Bool = false
     @State var isTappedNext: Bool = false
-    @State var soundLevel = 0.5
-    @State var offset: CGFloat = 0
+    @State var soundLevel = Metric.soundLevel
+    @State var offset: CGFloat = Metric.offsetFull
     
     @Binding var isExpand: Bool
     
     var animation: Namespace.ID
-    var heightImage = UIScreen.main.bounds.width * 0.7
-    var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
     
     var body: some View {
         VStack {
@@ -30,9 +28,9 @@ struct PlayerView: View {
                 }) {
                     Capsule()
                         .fill(Color.secondary)
-                        .frame(width: isExpand ? 40 : 0, height: isExpand ? 4 : 0)
-                        .opacity(isExpand ? 1 : 0)
-                        .padding(.top, isExpand ? safeArea?.top : 0)
+                        .frame(width: Metric.widthTopCapsule, height: Metric.heightCapsule)
+                        .opacity(Metric.opacityCapsule)
+                        .padding(.top, Metric.topPaddingCapsule?.top)
                 }
             }
             Spacer()
@@ -43,9 +41,9 @@ struct PlayerView: View {
                 Image("img_for_player")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .cornerRadius(10)
-                    .frame(width: isExpand ? heightImage : 55, height: isExpand ? heightImage : 55)
-                    .padding(.leading, isExpand ? 0 : 20)
+                    .cornerRadius(Metric.cornerRadiusImage)
+                    .frame(width: isExpand ? Metric.heightImageFull : Metric.heightImageMini, height: isExpand ? Metric.heightImageFull : Metric.heightImageMini)
+                    .padding(.leading, isExpand ? Metric.leadingPaddingFull : Metric.leadingPaddingMini)
                 
                 if !isExpand {
                     Text("Ты была права")
@@ -56,16 +54,20 @@ struct PlayerView: View {
                     Button(action: tapPlayButton) {
                         Image(systemName: isTappedPlay ? "pause.fill" : "play.fill")
                             .resizable()
-                            .frame(width: 25, height: 25)
+                            .frame(width: Metric.widthMiniPlayButton, height: Metric.heightMiniPlayButton)
                             .foregroundColor(.black)
                     }
                     
                     Button(action: tapNextButton) {
                         Image(systemName: "forward.fill")
                             .resizable()
-                            .frame(width: 25, height: 20)
+                            .frame(width: Metric.widthMiniNextButton, height: Metric.heightMiniNextButton)
                             .foregroundColor(.black)
-                            .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 20))
+                            .padding(.init(
+                                top: Metric.topPaddingMiniNextButton,
+                                leading: Metric.leadingPaddingMiniNextButton,
+                                bottom: Metric.bottomPaddingMiniNextButton,
+                                trailing: Metric.trailingPaddingMiniNextButton))
                     }
                 }
             }
@@ -93,19 +95,19 @@ struct PlayerView: View {
                                 .font(.title2)
                         }
                     }
-                    .padding(.bottom, 20)
+                    .padding(.bottom, Metric.bottomPaddingFirstStack)
                     
                     VStack {
                         ZStack(alignment: .leading) {
                             Capsule()
                                 .fill(.secondary)
-                                .frame(width: UIScreen.main.bounds.width - 40, height: 3)
-                                .opacity(1)
+                                .frame(width: Metric.widthPlayerViewFull, height: Metric.heightSoundLine)
+                                .opacity(Metric.opacityCapsule)
                             
                             Circle()
                                 .fill(Color.white)
-                                .opacity(1)
-                                .frame(width: 6, height: 6)
+                                .opacity(Metric.opacityCapsule)
+                                .frame(width: Metric.widthCircle, height: Metric.heightCircle)
                         }
                         
                         HStack {
@@ -120,7 +122,7 @@ struct PlayerView: View {
                                 .font(.caption)
                         }
                     }
-                    .padding(.bottom, 40)
+                    .padding(.bottom, Metric.bottomPaddingSecondStack)
                     
                     HStack {
                         Spacer()
@@ -130,7 +132,7 @@ struct PlayerView: View {
                                 .resizable()
                                 .foregroundColor(.white)
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 40, height: 40)
+                                .frame(width: Metric.widthFullButton, height: Metric.heightFullButton)
                         }
                         
                         Spacer()
@@ -142,7 +144,7 @@ struct PlayerView: View {
                                 .resizable()
                                 .foregroundColor(.white)
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: 40, height: 40)
+                                .frame(width: Metric.widthFullButton, height: Metric.heightFullButton)
                         }
                         
                         Spacer()
@@ -152,12 +154,12 @@ struct PlayerView: View {
                                 .resizable()
                                 .foregroundColor(.white)
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 40, height: 40)
+                                .frame(width: Metric.widthFullButton, height: Metric.heightFullButton)
                         }
                         
                         Spacer()
                     }
-                    .padding(.bottom, 50)
+                    .padding(.bottom, Metric.bottomPaddingFullButton)
                     
                     HStack {
                         Image(systemName: "speaker.fill")
@@ -165,7 +167,7 @@ struct PlayerView: View {
                         
                         Spacer()
                         
-                        Slider(value: $soundLevel, in: 0...1, step: 0.0625)
+                        Slider(value: $soundLevel, in: 0...1, step: Metric.stepSound)
                             .font(.title2)
                         
                         Spacer()
@@ -173,7 +175,7 @@ struct PlayerView: View {
                         Image(systemName: "speaker.wave.2.fill")
                             .foregroundColor(.secondary)
                     }
-                    .padding(.bottom, 20)
+                    .padding(.bottom, Metric.bottomPaddingThirdStack)
                     
                     HStack {
                         Spacer()
@@ -202,21 +204,21 @@ struct PlayerView: View {
                         
                         Spacer()
                     }
-                    .padding(.bottom, 20)
+                    .padding(.bottom, Metric.bottomPaddingFourthStack)
                     
                     Capsule()
                         .fill(Color.white)
-                        .frame(width: UIScreen.main.bounds.width / 5 * 2, height: 4)
-                        .opacity(1)
-                        .padding(.bottom, 4)
+                        .frame(width: Metric.widthBottomCapsule, height: Metric.heightCapsule)
+                        .opacity(Metric.opacityCapsule)
+                        .padding(.bottom, Metric.bottomPaddingCapsule)
                 }
-                .frame(width: UIScreen.main.bounds.width - 40)
+                .frame(width: Metric.widthPlayerViewFull)
             }
         }
-        .frame(maxHeight: isExpand ? .infinity : 70)
+        .frame(maxHeight: isExpand ? .infinity : Metric.heightPlayerView)
         .frame(width: UIScreen.main.bounds.width)
         .background(
-            VStack(spacing: 0) {
+            VStack(spacing: Metric.spacingBackground) {
                 BlurView()
                 Divider()
             }
@@ -224,25 +226,25 @@ struct PlayerView: View {
                 withAnimation(.spring()){isExpand = true}
             }
             )
-        .cornerRadius(isExpand ? 20 : 0)
-        .offset(y: isExpand ? 0 : -48)
+        .cornerRadius(isExpand ? Metric.cornerRadiusPlayerViewFull : Metric.cornerRadiusPlayerViewMini)
+        .offset(y: isExpand ? Metric.offsetFull : Metric.offsetMini)
         .offset(y: offset)
         .gesture(DragGesture().onEnded(onEnded(value:)).onChanged(onChanged(value:)))
         .ignoresSafeArea()
     }
     
     func onChanged(value: DragGesture.Value) {
-        if value.translation.height > 0 && isExpand{
+        if value.translation.height > 0 && isExpand {
             offset = value.translation.height
         }
     }
     
     func onEnded(value: DragGesture.Value) {
-        withAnimation(.interactiveSpring(response: 0.2, dampingFraction: 1, blendDuration: 0)) {
-            if value.translation.height > heightImage {
+        withAnimation(.interactiveSpring(response: Metric.response, dampingFraction: Metric.dampingFraction, blendDuration: Metric.blendDuration)) {
+            if value.translation.height > Metric.heightImageFull {
                 isExpand = false
             }
-            offset = 0
+            offset = Metric.offsetFull
         }
     }
 }
@@ -256,5 +258,61 @@ extension PlayerView {
     
     private func tapNextButton() {
         isTappedNext = !isTappedNext
+    }
+}
+
+// MARK: - Constants
+
+extension PlayerView {
+    enum Metric {
+        static let heightPlayerView: CGFloat = 70
+        static let widthPlayerViewFull: CGFloat = UIScreen.main.bounds.width - 40
+        static let cornerRadiusPlayerViewFull: CGFloat = 20
+        static let cornerRadiusPlayerViewMini: CGFloat = 0
+        static let offsetFull: CGFloat = 0
+        static let offsetMini: CGFloat = -48
+        
+        static let response: CGFloat = 0.2
+        static let dampingFraction: Double = 1
+        static let blendDuration: Double = 0
+        
+        static let heightCapsule: CGFloat = 4
+        static let widthTopCapsule: CGFloat = 40
+        static let widthBottomCapsule: CGFloat = UIScreen.main.bounds.width / 5 * 2
+        static let opacityCapsule: Double = 1
+        static let bottomPaddingCapsule: Double = 4
+        static let topPaddingCapsule = UIApplication.shared.windows.first?.safeAreaInsets
+        
+        static let heightImageMini: CGFloat = 55
+        static let heightImageFull: CGFloat = UIScreen.main.bounds.width * 0.7
+        static let cornerRadiusImage: CGFloat = 10
+        static let leadingPaddingFull: CGFloat = 0
+        static let leadingPaddingMini: CGFloat = 20
+        
+        static let heightMiniPlayButton: CGFloat = 25
+        static let widthMiniPlayButton: CGFloat = 25
+        static let heightMiniNextButton: CGFloat = 20
+        static let widthMiniNextButton: CGFloat = 25
+        static let topPaddingMiniNextButton: CGFloat = 0
+        static let leadingPaddingMiniNextButton: CGFloat = 15
+        static let bottomPaddingMiniNextButton: CGFloat = 0
+        static let trailingPaddingMiniNextButton: CGFloat = 20
+        
+        static let heightFullButton: CGFloat = 40
+        static let widthFullButton: CGFloat = 40
+        static let bottomPaddingFullButton: CGFloat = 50
+        
+        static let heightCircle: CGFloat = 6
+        static let widthCircle: CGFloat = 6
+        static let heightSoundLine: CGFloat = 3
+        
+        static let stepSound: CGFloat = 0.0625
+        static let soundLevel: CGFloat = 0.5
+        static let spacingBackground: CGFloat = 0
+        
+        static let bottomPaddingFirstStack: CGFloat = 20
+        static let bottomPaddingSecondStack: CGFloat = 40
+        static let bottomPaddingThirdStack: CGFloat = 20
+        static let bottomPaddingFourthStack: CGFloat = 20
     }
 }

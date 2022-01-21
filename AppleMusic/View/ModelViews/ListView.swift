@@ -17,7 +17,7 @@ struct ListView: View {
                 HStack {
                     Image(systemName: model[index].icon)
                         .foregroundColor(.pink)
-                        .frame(width: 25, height: 25)
+                        .frame(width: Metric.width, height: Metric.height)
                     Text(model[index].title)
                 }
             }
@@ -27,6 +27,13 @@ struct ListView: View {
         .onAppear() {
             UITableView.appearance().backgroundColor = UIColor.clear
         }
+    }
+    
+    // MARK: - Constants
+    
+    enum Metric {
+        static let width: CGFloat = 25
+        static let height: CGFloat = 25
     }
 }
 

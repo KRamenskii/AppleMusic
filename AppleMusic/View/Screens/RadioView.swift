@@ -10,7 +10,7 @@ import SwiftUI
 struct RadioView: View {
     private let modelRadioCells = SectionCellsRadio.collectionRadioCells
     private let modelCollectionStations = SectionCellsRadio.collectionStations
-    let rows = [GridItem(.fixed(200))]
+    let rows = [GridItem(.fixed(Metric.widthImageFirstSection))]
     let columns = [GridItem(.flexible())]
     
     var body: some View {
@@ -36,12 +36,16 @@ struct RadioView: View {
                                 Image(modelRadioCells[index].nameIconImage)
                                     .renderingMode(.original)
                                     .resizable()
-                                    .cornerRadius(10)
-                                    .frame(width: UIScreen.main.bounds.width - 40, height: 250)
+                                    .cornerRadius(Metric.cornerRadius)
+                                    .frame(width: Metric.widthImageFirstSection, height: Metric.heightImageFirstSection)
                             }
                         }
                     }
-                    .padding(.init(top: 0, leading: 20, bottom: 10, trailing: 20))
+                    .padding(.init(
+                        top: Metric.topPaddingFirstSection,
+                        leading: Metric.leadingPaddingFirstSection,
+                        bottom: Metric.bottomPaddingFirstSection,
+                        trailing: Metric.trailingPaddingFirstSection))
                 }
                 LazyVGrid(columns: columns) {
                     VStack(alignment: .leading) {
@@ -54,9 +58,13 @@ struct RadioView: View {
                                 Image(modelCollectionStations[index].nameIconImage)
                                     .renderingMode(.original)
                                     .resizable()
-                                    .cornerRadius(10)
-                                    .frame(width: 120, height: 120)
-                                    .padding(.init(top: 7, leading: 0, bottom: 7, trailing: 0))
+                                    .cornerRadius(Metric.cornerRadius)
+                                    .frame(width: Metric.frameImageSecondSection, height: Metric.frameImageSecondSection)
+                                    .padding(.init(
+                                        top: Metric.topPaddingImage,
+                                        leading: Metric.leadingPaddingImage,
+                                        bottom: Metric.bottomPaddingImage,
+                                        trailing: Metric.trailingPaddingImage))
                                 VStack(alignment: .leading) {
                                     Spacer()
                                     Text(modelCollectionStations[index].titleHeader)
@@ -71,11 +79,14 @@ struct RadioView: View {
                                         Divider()
                                     }
                                 }
-                                .padding(.leading, 10)
                             }
                         }
                     }
-                    .padding(.init(top: 10, leading: 20, bottom: 70, trailing: 20))
+                    .padding(.init(
+                        top: Metric.topPaddingSecondSection,
+                        leading: Metric.leadingPaddingSecondSection,
+                        bottom: Metric.bottomPaddingSecondSection,
+                        trailing: Metric.trailingPaddingSecondSection))
                 }
             }
             .navigationTitle("Радио")
@@ -88,5 +99,28 @@ struct RadioView: View {
 struct RadioView_Previews: PreviewProvider {
     static var previews: some View {
         RadioView()
+    }
+}
+
+// MARK: - Constants
+
+extension RadioView {
+    enum Metric {
+        static let cornerRadius: CGFloat = 10
+        static let widthImageFirstSection: CGFloat = UIScreen.main.bounds.width - 40
+        static let heightImageFirstSection: CGFloat = 250
+        static let topPaddingFirstSection: CGFloat = 0
+        static let leadingPaddingFirstSection: CGFloat = 20
+        static let bottomPaddingFirstSection: CGFloat = 10
+        static let trailingPaddingFirstSection: CGFloat = 20
+        static let frameImageSecondSection: CGFloat = 120
+        static let topPaddingSecondSection: CGFloat = 10
+        static let leadingPaddingSecondSection: CGFloat = 20
+        static let bottomPaddingSecondSection: CGFloat = 70
+        static let trailingPaddingSecondSection: CGFloat = 20
+        static let topPaddingImage: CGFloat = 7
+        static let leadingPaddingImage: CGFloat = 0
+        static let bottomPaddingImage: CGFloat = 7
+        static let trailingPaddingImage: CGFloat = 0
     }
 }
